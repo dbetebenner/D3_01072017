@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
+<head>
+<title>D3 Block-a-Day: Day 7, January 7, 2017</title>
 <style>
 
 path {
@@ -13,6 +15,7 @@ path:hover {
 }
 
 </style>
+</head>
 <body>
 <script src="//d3js.org/d3.v4.min.js"></script>
 <script src="//d3js.org/topojson.v2.min.js"></script>
@@ -26,17 +29,17 @@ var width = 960,
 var projection = d3.geoMercator()
 		.center([ -107.5534, 43.00029 ])
     .scale(5000);
- 
+
 var path = d3.geoPath()
 		.projection(projection);
-  
+
 var svg = d3.select("body")
 		.append("svg")
     .attr("width", width)
     .attr("height", height);
 
-var g = svg.append("g")  
- 
+var g = svg.append("g")
+
 svg.append("rect")
     .attr("width", width)
     .attr("height", height)
@@ -45,11 +48,11 @@ svg.append("rect")
     .call(d3.zoom()
         .scaleExtent([1/2, 4])
         .on("zoom", zoomed));
-  
+
 function zoomed() {
   g.attr("transform", d3.event.transform);
 }
-    
+
 d3.json("WY_Districts.json", function(error, state_districts) {
   if (error) throw error;
 
