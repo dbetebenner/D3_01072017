@@ -6,8 +6,9 @@ New Year's Resolution for 2017: Make a D3 Block a day to teach myself D3. This i
 goes further into D3 map building using [topoJSON](https://github.com/topojson/topojson) showing school
 districts in US states. The topoJSON files used to construct this visualization were created by me
 using [shape files](https://www.census.gov/did/www/schooldistricts/) provided by the United States Census Bureau.
-[The Center for Assessment](https://github.com/CenterForAssessment) makes these files available for anyone to use
-at (https://github.com/CenterForAssessment/SGPspatialData). This first map shows Wyoming with zooming and panning controls
+[The Center for Assessment](https://github.com/CenterForAssessment) makes these
+[state and national school district topoJSON files](https://github.com/CenterForAssessment/SGPspatialData) available
+for anyone to use in their own development. This first map shows Wyoming with zooming and panning controls
 added. Big thanks to @bclinkinbeard for helping wire up the pan/zoom while maintaining the hover effects over the district shapes.
 
 ## Results
