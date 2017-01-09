@@ -8,7 +8,7 @@ districts in US states. The topoJSON files used to construct this visualization 
 using [shape files](https://www.census.gov/did/www/schooldistricts/) provided by the United States Census Bureau.
 [The Center for Assessment](https://github.com/CenterForAssessment) makes these files available for anyone to use
 at (https://github.com/CenterForAssessment/SGPspatialData). This first map shows Wyoming with zooming and panning controls
-added.
+added. Big thanks to @bclinkinbeard for helping wire up the pan/zoom while maintaining the hover effects over the district shapes.
 
 ## Results
 

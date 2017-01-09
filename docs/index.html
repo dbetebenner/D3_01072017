@@ -4,6 +4,14 @@
 <title>D3 Block-a-Day: Day 7, January 7, 2017</title>
 <style>
 
+#wrapper {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+}
+      
 path {
   fill: #ccc;
   stroke: #fff;
@@ -21,46 +29,45 @@ path:hover {
 <script src="//d3js.org/topojson.v2.min.js"></script>
 <script src="https://d3js.org/d3-array.v1.min.js"></script>
 <script src="https://d3js.org/d3-geo.v1.min.js"></script>
+
+<div id="wrapper">
+   <div id="chart"></div>
+</div>
+
 <script>
 
-var width = 960,
+  var width = 960,
     height = 500;
+  
+  const zoom = d3.zoom()
+      .scaleExtent([1/4, 3])
+      .on('zoom', function () {
+        d3.select('g').attr('transform', d3.event.transform)
+      });
 
-var projection = d3.geoMercator()
-		.center([ -107.5534, 43.00029 ])
-    .scale(5000);
+  const svg = d3.select('#chart')
+      .append('svg')
+      .attr('width', width)
+      .attr('height', height)
+      .call(zoom)
 
-var path = d3.geoPath()
-		.projection(projection);
+  const g = svg.append('g')
+    
+  var projection = d3.geoMercator()
+			.center([ -107.5534, 43.00029 ])
+			.scale(5000);
 
-var svg = d3.select("body")
-		.append("svg")
-    .attr("width", width)
-    .attr("height", height);
+  var path = d3.geoPath()
+      .projection(projection);
 
-var g = svg.append("g")
+  d3.json("WY_Districts.json", function(error, state_districts) {
+  	if (error) throw error;
 
-svg.append("rect")
-    .attr("width", width)
-    .attr("height", height)
-    .style("fill", "none")
-    .style("pointer-events", "all")
-    .call(d3.zoom()
-        .scaleExtent([1/2, 4])
-        .on("zoom", zoomed));
-
-function zoomed() {
-  g.attr("transform", d3.event.transform);
-}
-
-d3.json("WY_Districts.json", function(error, state_districts) {
-  if (error) throw error;
-
-  g.selectAll("path")
-      .data(topojson.feature(state_districts, state_districts.objects.districts).features)
-	    .enter()
-	    .append("path")
-      .attr("d", path);
-});
+  	g.selectAll("path")
+    	  .data(topojson.feature(state_districts, state_districts.objects.districts).features)
+		    .enter()
+		    .append("path")
+    	  .attr("d", path);
+	});
 </script>
 </body>
