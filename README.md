@@ -1,6 +1,6 @@
 # D3 Block-a-Day: Day 7, January, 7th 2017
 
-<a href="https://dbetebenner.github.io/D3_01072017/"><img src="https://gist.githubusercontent.com/dbetebenner/dc95803c61970d4282e620b83ff2964a/raw/c3f8855e8d66e4ab6be3c5896c83b7a30df1d4ac/thumbnail.png" align="left" hspace="12" vspace="100"></a>
+<a href="https://dbetebenner.github.io/D3_01072017/"><img src="https://gist.githubusercontent.com/dbetebenner/dc95803c61970d4282e620b83ff2964a/raw/c3f8855e8d66e4ab6be3c5896c83b7a30df1d4ac/thumbnail.png" align="left" hspace="12" vspace="110"></a>
 
 New Year's Resolution for 2017: Make a D3 Block a day to teach myself D3. This is Number 7. This example
 goes further into D3 map building using [topoJSON](https://github.com/topojson/topojson) showing school
